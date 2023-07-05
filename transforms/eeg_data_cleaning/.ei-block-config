@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "config": {
+        "edgeimpulse.com": {
+            "name": "eeg_data_cleaning",
+            "type": "transform",
+            "description": "merges eeg_data and demographic_info csv files, performs data cleaning on it and outputs a single cleaned csv file.",
+            "organizationId": 1,
+            "operatesOn": "dataitem",
+            "transformMountpoints": [],
+            "id": 4867
+        }
+    }
+}

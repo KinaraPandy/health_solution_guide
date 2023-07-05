@@ -1,0 +1,19 @@
+# Justfile
+
+build:
+    # Build a Docker image and tag it with the name of the current directory
+    docker build -t $(basename $(pwd)):latest .
+
+run-shell:
+    # Starts a shell with the container to debug locally
+    docker run -it --entrypoint /bin/bash $(basename $(pwd)):latest
+
+#Sample command.
+#just run-with-mount-and-entrypoint "/Users/kinarapandya/PycharmProjects/health_solution_guide/sample-data" "/tmp"
+run-with-mount-and-entrypoint local_dir container_dir:
+    # Run a Docker container with a local directory mounted to a directory in the container, and with a custom entrypoint
+    docker run -it --entrypoint "/usr/local/bin/python3" -v {{local_dir}}:{{container_dir}} $(basename $(pwd)):latest /app/transform.py --in-directory /tmp --out-directory /tmp/out
+
+push:
+    # Pushes the block to edge impulse
+    edge-impulse-blocks push
