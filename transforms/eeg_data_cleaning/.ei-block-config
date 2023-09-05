@@ -2,13 +2,14 @@
     "version": 1,
     "config": {
         "edgeimpulse.com": {
-            "name": "eeg_data_cleaning",
+            "name": "HealWell Transformation block without csv wizard",
             "type": "transform",
-            "description": "merges eeg_data and demographic_info csv files, performs data cleaning on it and outputs a single cleaned csv file.",
+            "description": "Perform transformations on input .csv files and output .csv files for each row in the dataframe",
             "organizationId": 1,
             "operatesOn": "dataitem",
+            "tlIndRequiresGpu": false,
             "transformMountpoints": [],
-            "id": 4867
+            "id": 4947
         }
     }
 }
